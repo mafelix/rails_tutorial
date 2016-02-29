@@ -1,13 +1,16 @@
 Rails.application.routes.draw do
-  # get 'posts', to: 'posts#index'
-  # get 'posts/new', to: 'posts#new'
-  # get 'posts/:id/edit', to:'posts#edit'
-  # get 'posts/:id', to: 'posts#show', as: 'post'
-  # patch 'posts/:id', to: 'posts#update'
-  # post 'posts', to: 'posts#create'
 
+  # get 'posts',          to: 'posts#index'
+  # get 'posts/new',      to: 'posts#new'
+  # get 'posts/:id/edit', to: 'posts#edit'
+  # get 'posts/:id',      to: 'posts#show', as: 'post' # necessary for the update action!
+  # patch 'posts/:id',    to: 'posts#update'
+  # post 'posts',         to: 'posts#create'
+
+
+  #this can replaces SCRUD(search, create, read, update, destroy)!!!!
   resources :posts
-
+  root to: 'posts#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -1,12 +1,13 @@
-<%= link_to "Back to this post", posts_path %>
+<%= link_to "Back to all posts", posts_path %>
 
-<h2>Edit this post</h2>
+<h2>Create a post!</h2>
 <%= form_for @post do |f| %>
   <div>
     <%= f.label "title" %><br>
     <%= f.text_field "title" %>
   </div>
   <div>
+
     <%= f.label "author" %><br>
     <%= f.text_field "author" %>
   </div>
