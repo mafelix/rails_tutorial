@@ -39,5 +39,5 @@ Post.create!(
 Post.create!(
   title: "Who?",
   author: "Vurram Khirani",
-  text: "Never heard of this guy Khurram Virani, but he sounds great."
+  text: "Never heard of this guy Khurram Virani, but he sounds great."}
   )
