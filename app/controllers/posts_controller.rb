@@ -7,13 +7,12 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
   end
-  
 
   def new
     @post = Post.new
   end
 
-   def create
+  def create
     @post = Post.new(post_params)
 
     if @post.save
@@ -23,10 +22,11 @@ class PostsController < ApplicationController
     end
   end
 
-  protected
 
-  def post_params
-    params.require(:post).permit(:title, :author, :text)
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to posts_path
   end
 
 
@@ -43,20 +43,12 @@ class PostsController < ApplicationController
       render :edit
     end
   end
- 
-  def destroy
-    @post = Post.find(params[:id])
-    @post.destroy
-    redirect_to posts_path
-  end
 
-  protected
+
 
   protected
 
   def post_params
     params.require(:post).permit(:title, :author, :text)
   end
-
-
 end
